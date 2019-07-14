@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "fs": "0.0.1-security",
+    "inquirer": "^6.5.0",
     "youtube-dl": "^2.0.0",
     "ytdl-core": "^0.29.3"
   }
