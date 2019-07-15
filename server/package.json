@@ -9,9 +9,11 @@
   "author": "Ronald So",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^4.1.1",
     "express": "^4.17.1",
     "fs": "0.0.1-security",
     "inquirer": "^6.5.0",
+    "nodemon": "^1.19.1",
     "youtube-dl": "^2.0.0",
     "ytdl-core": "^0.29.3"
   }
