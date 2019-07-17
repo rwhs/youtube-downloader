@@ -1,20 +1,18 @@
 import React from "react";
-// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 // Components
 import Header from './components/Header';
-import Search from './components/Search';
+import Downloader from './components/Downloader';
 
 
 class App extends React.Component {
   render() {
     return (
       <div className="container">
-        <div className="header">
-          <Header />
-        </div>
-        <Search />
+        <Header />
+        <Downloader />
       </div>
     );
   }
