@@ -23,6 +23,11 @@ app.get('/', (req, res) => {
     res.send('Home page');
 });
 
+app.post('/test', (req, res) => {
+    console.log(req.body);
+    res.send('Server response');
+})
+
 // app.get('/test', (req, res) => {
 //     res.send('Testing video download');
 //     inquirer.prompt(

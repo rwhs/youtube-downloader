@@ -3,9 +3,11 @@ import React from 'react';
 class Header extends React.Component {
   render() {
     return (
-      <div className="row justify-content-center align-items-center">
-        <div className="jumbotron">
-          <h1>YouTube Downloader</h1>
+      <div className="hero is-primary is-medium">
+        <div className="hero-body">
+          <div className="container has-text-centered">
+            <h1 className="title">YouTube Downloader</h1>
+          </div>
         </div>
       </div>
     );

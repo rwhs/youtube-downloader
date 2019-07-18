@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 class InputBox extends React.Component {
   constructor(props) {
@@ -13,20 +15,26 @@ class InputBox extends React.Component {
     e.preventDefault();
     console.log(`URL added to queue: ${this.props.url}`);
 
+    axios.post('http://localhost:4000/test', {'test': 'Testing request'})
+    .then(res => {
+      console.log(res.data)
+    });
+    
     this.props.onInputChange('');
   }
 
   handleChange(e) {
     this.props.onInputChange(e.target.value);
-  };
+  }
+
 
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <div className="input-group">
-          <input className="form-control" type="text" value={this.props.url} onChange={this.handleChange} />
-          <div className="input-group-append">
-            <button className="btn btn-primary" type="submit">Add to queue</button>
+        <div className="field">
+          <input className="input" type="text" value={this.props.url} onChange={this.handleChange} />
+          <div className="control">
+            <button className="button is-link" type="submit">Add to queue</button>
           </div>
         </div>
         <h1>{this.props.url}</h1>
