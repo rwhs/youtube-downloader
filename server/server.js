@@ -32,12 +32,17 @@ app.post('/test', (req, res) => {
 
         // Download
         dl.pipe(fs.createWriteStream(dir + 'video.mp4'));
+        // Download button not ready until finished
+        // res.send({
+        //     downloadIsReady: ''
+        // });
         dl.on('finish', () => {
             console.log('File download finished'); // Log when download finished
 
             res.send({
-                downloadIsReady: "true",
+                downloadIsReady: 'true',
             });
+            // res.end()
             // let file = dir + 'video.mp4';
             // let filetype = mime.getType(file);
 

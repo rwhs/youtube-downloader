@@ -10,17 +10,21 @@ class InputBox extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+// Handlers
   handleSubmit(e) {
     e.preventDefault();
     console.log(`URL added to queue: ${this.props.url}`);
 
+    this.props.handleReady(''); // Disable dl button until dl is complete
+    this.props.handleIsProcessing();
+
     axios.post('http://localhost:4000/test', {"url": this.props.url})
     .then(res => {
       console.log(res.data.downloadIsReady);
-      this.props.handleReady();
+      this.props.handleReady(res.data.downloadIsReady);
+      this.props.handleIsProcessing();
     })
-
-    this.props.onInputChange('');
+    this.props.onInputChange(''); // Reset field
   }
 
   handleChange(e) {
