@@ -53,6 +53,9 @@ app.post('/test', (req, res) => {
         })
     } else {
         console.log('Invalid URL');
+        res.send({
+            downloadIsReady: '',
+        });
     }
 })
 

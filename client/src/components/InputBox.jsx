@@ -21,7 +21,6 @@ class InputBox extends React.Component {
     // POST request
     axios.post('http://localhost:4000/test', { "url": this.props.url })
       .then(res => {
-        console.log(res.data.downloadIsReady);
         this.props.handleReady(res.data.downloadIsReady);
         this.props.handleIsProcessing();
       })
@@ -37,7 +36,11 @@ class InputBox extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <div className="field">
-          <input className="input" type="text" value={this.props.url} onChange={this.handleChange} />
+          <input className="input"
+          type="text"
+          value={this.props.url}
+          onChange={this.handleChange}
+          />
           <div className="control">
             <button className="button is-link" type="submit">Add to queue</button>
           </div>
