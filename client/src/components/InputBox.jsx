@@ -1,11 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 class InputBox extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { url: '' };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -15,11 +14,12 @@ class InputBox extends React.Component {
     e.preventDefault();
     console.log(`URL added to queue: ${this.props.url}`);
 
-    axios.post('http://localhost:4000/test', {'test': 'Testing request'})
+    axios.post('http://localhost:4000/test', {"url": this.props.url})
     .then(res => {
-      console.log(res.data)
-    });
-    
+      console.log(res.data.downloadIsReady);
+      this.props.handleReady();
+    })
+
     this.props.onInputChange('');
   }
 

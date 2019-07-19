@@ -4,8 +4,8 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const inquirer = require('inquirer')
 const ytdl = require('ytdl-core')
+const mime = require('mime');
 
 
 // Download Directory
@@ -23,22 +23,37 @@ app.get('/', (req, res) => {
     res.send('Home page');
 });
 
+
+// Download request
 app.post('/test', (req, res) => {
-    console.log(req.body);
-    res.send('Server response');
+    console.log(req.body.url);
+    if (ytdl.validateURL(req.body.url)) { // Validate URL
+        let dl = ytdl(req.body.url);
+
+        // Download
+        dl.pipe(fs.createWriteStream(dir + 'video.mp4'));
+        dl.on('finish', () => {
+            console.log('File download finished'); // Log when download finished
+
+            res.send({
+                downloadIsReady: "true",
+            });
+            // let file = dir + 'video.mp4';
+            // let filetype = mime.getType(file);
+
+            // res.setHeader('Content-type', filetype);
+            // res.setHeader('Content-disposition', 'attachment; filename=download.mp4');
+            // res.download('./videos/video.mp4');
+            // fs.createReadStream('./videos/video.mp4').pipe(res);
+        })
+    } else {
+        console.log('Invalid URL');
+    }
 })
 
-// app.get('/test', (req, res) => {
-//     res.send('Testing video download');
-//     inquirer.prompt(
-//         {type: 'input', name: 'url', message: 'Enter video URL, or type "exit" to close: '}
-//     ).then(answers => {
-//         // Exit
-//         if (answers.url.toLowerCase() == 'exit') { return } 
-//         else {
-//             ytdl(answers.url).pipe(fs.createWriteStream(dir + 'video.mp4'));        }
-//     })    
-// })
+app.get('/download', (req, res) => {
+    res.download('./videos/video.mp4');
+})
 
 app.listen(PORT, () => {
     console.log("Server is running on port: " + PORT);
