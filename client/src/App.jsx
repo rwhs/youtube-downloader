@@ -1,6 +1,7 @@
 import React from "react";
 // import { Route, Link } from "react-router-dom";
 import 'bulma/css/bulma.min.css';
+import './style.css'
 
 
 // Components
@@ -11,7 +12,7 @@ import Downloader from './components/Downloader';
 class App extends React.Component {
   render() {
     return (
-      <div className="container">
+      <div>
         <Header />
         <Downloader />
       </div>

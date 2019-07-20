@@ -17,34 +17,41 @@ class Downloader extends React.Component {
     };
   }
 
-// Handlers
+  // Handlers
   handleInputBoxChange(inputUrl) {
-    this.setState({url: inputUrl});
+    this.setState({ url: inputUrl });
   }
 
   handleDownloadIsReady(isReadyInput) {
-    this.setState({downloadIsReady: isReadyInput})
+    this.setState({ downloadIsReady: isReadyInput })
   }
 
   handleIsProcessing() {
-    this.setState({isProcessing: !this.state.isProcessing})
+    this.setState({ isProcessing: !this.state.isProcessing })
   }
 
-// Render
+  // Render
   render() {
     return (
-      <div>
-      <InputBox 
-      url={this.state.url}
-      onInputChange={this.handleInputBoxChange}
-      handleReady={this.handleDownloadIsReady}
-      handleIsProcessing={this.handleIsProcessing}
-      />
-      {this.state.isProcessing ? (
-        <h1>Processing</h1>
-      ) : (
-        <DownloadButton isReady={this.state.downloadIsReady}/>
-      )}
+      <div className="columns is-centered">
+        <div className="column is-half">
+          <div className="box inputContainer">
+            <InputBox
+              url={this.state.url}
+              onInputChange={this.handleInputBoxChange}
+              handleReady={this.handleDownloadIsReady}
+              handleIsProcessing={this.handleIsProcessing}
+            />
+          </div>
+          <div className="downloadButtonContainer">
+          {this.state.isProcessing ? (
+            <button className="button is-danger is-loading" disabled="true">Download</button>
+          ) : (
+              <DownloadButton isReady={this.state.downloadIsReady} />
+            )}
+          </div>
+        </div>
+
       </div>
     )
   }

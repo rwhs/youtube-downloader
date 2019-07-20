@@ -35,17 +35,19 @@ class InputBox extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <div className="field">
-          <input className="input"
-          type="text"
-          value={this.props.url}
-          onChange={this.handleChange}
-          />
+        <div className="field has-addons">
+          <div className="control is-expanded">
+            <input className="input"
+            type="text"
+            value={this.props.url}
+            onChange={this.handleChange}
+            placeholder="YouTube URL"
+            />
+          </div>
           <div className="control">
-            <button className="button is-link" type="submit">Add to queue</button>
+            <button className="button is-danger" type="submit">Add video</button>
           </div>
         </div>
-        <h1>{this.props.url}</h1>
       </form>
     );
   }

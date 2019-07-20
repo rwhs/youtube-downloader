@@ -16,7 +16,7 @@ class DownloadButton extends React.Component {
 
   render() {
     return (
-      <button className="button is-link" disabled={!this.props.isReady} onClick={this.handleDownload}>Download</button>
+      <button className="button is-danger" disabled={!this.props.isReady} onClick={this.handleDownload}>Download</button>
     )
   }
 }

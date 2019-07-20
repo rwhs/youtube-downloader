@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300&display=swap');
+
+html, body {
+    background: #f4f4f4;
+}
+
+.inputContainer {
+    margin: 0 0;
+    padding: 4rem 4rem;
+}
+
+.downloadButtonContainer {
+    text-align: center;
+}
+
+.field.has-addons {
+    margin-bottom: 0
+}
+
+.headerText {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 4.8em;
+    font-weight: 300;
+    letter-spacing: 0
+}
+
+.hero.is-medium .hero-body {
+    padding-bottom: 7rem;
+    padding-top: 7rem;
+}
