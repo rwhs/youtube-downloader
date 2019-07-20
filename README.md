@@ -1,9 +1,13 @@
 # Youtube Downloader
 Node.js app to download YouTube videos to your computer given the URL. Credits to fent for [ytdl-core](https://github.com/fent/node-ytdl-core).
 
-Currently only runs and takes inputs from the command line, but planned features include:
+Simply paste the URL of the video you wish to download, and your download will be available once the video is done processing.
 
-- Taking multiple parameters or options (eg. video quality, audio only)
-- Integration with site/web app
-- User accounts
-- Saved download queue
+
+Possible to-do list:
+
+- Taking multiple parameters or options (eg. video quality, audio/mp3 only) - working on this next
+- Show processed video information
+- ~~Integration with site/web app~~ Done! No longer a command line app
+- User accounts (Low priority)
+- Saved download queue (Low priority)
