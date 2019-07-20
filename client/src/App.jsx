@@ -7,6 +7,7 @@ import './style.css'
 // Components
 import Header from './components/Header';
 import Downloader from './components/Downloader';
+import Footer from './components/Footer';
 
 
 class App extends React.Component {
@@ -15,6 +16,7 @@ class App extends React.Component {
       <div>
         <Header />
         <Downloader />
+        <Footer />
       </div>
     );
   }

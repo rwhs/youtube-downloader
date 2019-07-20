@@ -21,10 +21,36 @@ html, body {
     font-family: 'Open Sans', sans-serif;
     font-size: 4.8em;
     font-weight: 300;
-    letter-spacing: 0
+    letter-spacing: 0;
+    color: #555555;
 }
 
 .hero.is-medium .hero-body {
-    padding-bottom: 7rem;
-    padding-top: 7rem;
+    padding-bottom: 8rem;
+    padding-top: 8rem;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 8em;
+    padding: 0 15%;
+    background: none;
+}
+
+.footerContent {
+    border-top: 1px solid #e0e0e0;
+    line-height: 6em;
+    font-family: 'Open Sans';
+    color: #555555
+}
+
+.footerLink {
+    color: #555555;
+}
+
+.footerLink:hover {
+    text-decoration: underline;
+    color: #888888;
 }
