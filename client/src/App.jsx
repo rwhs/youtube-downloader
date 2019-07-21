@@ -3,12 +3,10 @@ import React from "react";
 import 'bulma/css/bulma.min.css';
 import './style.css'
 
-
 // Components
 import Header from './components/Header';
 import Downloader from './components/Downloader';
 import Footer from './components/Footer';
-
 
 class App extends React.Component {
   render() {

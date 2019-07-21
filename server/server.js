@@ -24,10 +24,8 @@ app.post('/test', (req, res) => {
     console.log(req.body.url);
     if (ytdl.validateURL(req.body.url)) { // Validate URL
         let dl = ytdl(req.body.url);
-
         // Download
         dl.pipe(fs.createWriteStream(dir + 'video.mp4'));
-
         // Download button not ready until finished
         dl.on('finish', () => {
             console.log('File download finished'); // Log when download finished
