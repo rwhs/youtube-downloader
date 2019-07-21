@@ -7,7 +7,7 @@ class Footer extends React.Component {
     return (
       <footer className="footer">
         <div className="footerContent content has-text-centered">
-          <p><a class="footerLink" href="https://github.com/rwhs">Ronald So</a> |  <a class="footerLink" href="https://github.com/rwhs/youtube-downloader">See the source code on GitHub <FontAwesomeIcon icon={faGithub} /></a></p>
+          <p><a className="footerLink" href="https://github.com/rwhs">Ronald So</a> |  <a className="footerLink" href="https://github.com/rwhs/youtube-downloader">See the source code on GitHub <FontAwesomeIcon icon={faGithub} /></a></p>
         </div>
       </footer>
     )
