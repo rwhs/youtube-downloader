@@ -60,8 +60,17 @@ app.post('/test', (req, res) => {
 })
 
 app.get('/download', (req, res) => {
-    res.download('./videos/video.mp4');
-})
+    res.download('./videos/video.mp4', 'video.mp4', function (err) {
+        console.log('Transfer complete');
+        let deleteLocalVideo = () => {
+            fs.unlink('./videos/video.mp4', function() {
+                console.log('Deleted video')
+            })
+        };
+        // Delete locally stored video after 10 minutes
+        setTimeout(deleteLocalVideo, 600000);
+    }
+)})
 
 app.listen(PORT, () => {
     console.log("Server is running on port: " + PORT);
