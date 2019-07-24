@@ -19,7 +19,7 @@ class InputBox extends React.Component {
     this.props.handleIsProcessing();
 
     // POST request
-    axios.post('http://localhost:4000/test', { "url": this.props.url })
+    axios.post('http://localhost:4000/post', { "url": this.props.url })
       .then(res => {
         this.props.handleReady(res.data.downloadIsReady);
         this.props.handleIsProcessing();

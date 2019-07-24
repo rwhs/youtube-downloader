@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 });
 
 // Add video POST request
-app.post('/test', (req, res) => {
+app.post('/post', (req, res) => {
     console.log(req.body.url);
     if (ytdl.validateURL(req.body.url)) { // Validate URL
         let dl = ytdl(req.body.url);
