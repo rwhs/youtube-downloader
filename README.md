@@ -3,8 +3,14 @@ Node.js app to download YouTube videos to your computer given the URL. Credits t
 
 Simply paste the URL of the video you wish to download, and your download will be available once the video is done processing.
 
+# How to Run
 
-Possible to-do list:
+**Backend:** Navigate to `/server`, and then run `npm start`.
+
+**Frontend:** Navigate to `/client`, and then run `npm start`.
+
+
+# To-do list:
 
 - Taking multiple parameters or options (eg. video quality, audio/mp3 only) - working on this next
 - Show processed video information
